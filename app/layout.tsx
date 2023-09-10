@@ -2,7 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import '../styles/globals.css';
 
-const title = 'Twitter Bio Generator
+const title = 'Content Generator';
 const description = 'Generate your next content bio in seconds.';
 
 export const metadata: Metadata = {
