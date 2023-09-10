@@ -50,10 +50,10 @@ export default function Page() {
           rel="noopener noreferrer"
         >
           <Github />
-          <p>Star on GitHub</p>
+          <p>Star this on GitHub</p>
         </a>
         <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900">
-          Generate your next Twitter bio using chatGPT
+          Generate your next content calendar using chatGPT
         </h1>
         <p className="text-slate-500 mt-5">47,118 bios generated so far.</p>
         <form className="max-w-xl w-full" onSubmit={onSubmit}>
@@ -66,7 +66,7 @@ export default function Page() {
               className="mb-5 sm:mb-0"
             />
             <p className="text-left font-medium">
-              Copy your current bio{' '}
+              Copy your current content{' '}
               <span className="text-slate-500">
                 (or write a few sentences about yourself)
               </span>
@@ -95,7 +95,7 @@ export default function Page() {
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               type="submit"
             >
-              Generate your bio &rarr;
+              Generate your content &rarr;
             </button>
           )}
           {isLoading && (
@@ -125,7 +125,7 @@ export default function Page() {
                   className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto"
                   ref={bioRef}
                 >
-                  Your generated bios
+                  Your generated contents yay
                 </h2>
               </div>
               <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
@@ -138,7 +138,7 @@ export default function Page() {
                         className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                         onClick={() => {
                           navigator.clipboard.writeText(generatedBio);
-                          toast('Bio copied to clipboard', {
+                          toast('Content copied to clipboard', {
                             icon: '✂️',
                           });
                         }}
