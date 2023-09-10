@@ -20,13 +20,15 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `Generate 2 ${vibe} content ideas, in a list, with a topic tile accompanied with each Instagram captions with no hashtags and clearly labeled "1." and "2.". ${
+        content: `List 2 ${vibe} content ideas with a topic title and Instagram captions for the mentioned product and clearly labeled "1." and "2.". ${
           vibe === 'Funny'
             ? "Make sure there is a joke in there and it's a little ridiculous."
             : null
         }
-          Make sure each generated biography is more than 250 characters, has short sentences that are found in Twitter bios, and base them on top 100 Instagramers
-      }`,
+          Make sure each generated content is more than 150 characters, has simple sentences that used by top creators and sellers on Instagram, and base them on this context: ${bio}${
+          bio.slice(-1) === '.' ? '' : '.'
+        }`,
+      },
     ],
   });
 
