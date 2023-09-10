@@ -26,7 +26,7 @@ export async function POST(req: Request) {
             : null
         }
           Make sure each generated biography is more than 250 characters, has short sentences that are found in Twitter bios, and base them on top 100 Instagramers
-      },
+      }`,
     ],
   });
 
