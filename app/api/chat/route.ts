@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `List 2 ${vibe} content ideas with a topic title and Instagram captions for the mentioned product and clearly labeled "1." and "2.". ${
+        content: `List 2 ${vibe} content ideas with a topic title and Instagram captions for the ${input} and clearly labeled "1." and "2.". ${
           vibe === 'Funny'
             ? "Make sure there is a joke in there and it's a little ridiculous."
             : null
