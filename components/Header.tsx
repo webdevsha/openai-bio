@@ -17,7 +17,7 @@ export default function Header() {
         </h1>
       </Link>
       <a
-        href="https://vercel.com/templates/next.js/twitter-bio"
+        href="https://openai-bio.vercel.app/"
         target="_blank"
         rel="noreferrer"
       >
