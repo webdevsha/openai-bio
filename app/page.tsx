@@ -53,7 +53,7 @@ export default function Page() {
           <p>Star this on GitHub</p>
         </a>
         <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-slate-900">
-          Generate your next content calendar using chatGPT
+          Can we create our next content calendar using AI? 🤔
         </h1>
         <p className="text-slate-500 mt-5">47,118 bios generated so far.</p>
         <form className="max-w-xl w-full" onSubmit={onSubmit}>
@@ -79,7 +79,7 @@ export default function Page() {
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
             placeholder={
-              'e.g. Senior Developer Advocate @vercel. Tweeting about web development, AI, and React / Next.js. Writing nutlope.substack.com.'
+              'e.g. BMW cars or Quputeh or Ilao Ilao ice cream for cats.'
             }
           />
           <div className="flex mb-5 items-center space-x-3">
