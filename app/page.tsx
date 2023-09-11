@@ -21,15 +21,15 @@ export default function Page() {
   };
 
   const { input, handleInputChange, handleSubmit, isLoading, messages } =
-    useChat({
-      body: {
-        vibe,
-        bio,
-      },
-      onResponse() {
-        scrollToBios();
-      },
-    });
+  useChat({
+    body: {
+      vibe,
+      bio,
+    },
+    onResponse() {
+      scrollToBios();
+    },
+  } as any);
 
   // Modify onSubmit function to directly pass the 'input' value
   const onSubmit = (e: any) => {
