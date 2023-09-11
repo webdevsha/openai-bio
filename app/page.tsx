@@ -31,10 +31,9 @@ export default function Page() {
       },
     });
 
+  // Modify onSubmit function to directly pass the 'input' value
   const onSubmit = (e: any) => {
-    // Include 'input' in the request body when calling handleSubmit
-    handleSubmit(e, { input });
-    setBio(input);
+    handleSubmit(e, { input }); // Pass 'input' value here
   };
 
   const lastMessage = messages[messages.length - 1];
