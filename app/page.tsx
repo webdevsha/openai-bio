@@ -66,9 +66,9 @@ export default function Page() {
               className="mb-5 sm:mb-0"
             />
             <p className="text-left font-medium">
-              Copy your current content{' '}
+              Write your desired product{' '}
               <span className="text-slate-500">
-                (or write a few sentences about yourself)
+                (or services you want to do)
               </span>
               .
             </p>
@@ -79,12 +79,12 @@ export default function Page() {
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
             placeholder={
-              'e.g. BMW cars or Quputeh or Ilao Ilao ice cream for cats.'
+              'e.g. BMW cars for small family or barber for afro hairs or Ilao Ilao ice cream for cats.'
             }
           />
           <div className="flex mb-5 items-center space-x-3">
             <Image src="/2-black.png" width={30} height={30} alt="1 icon" />
-            <p className="text-left font-medium">Select your vibe.</p>
+            <p className="text-left font-medium">Select your voice tone.</p>
           </div>
           <div className="block">
             <DropDown vibe={vibe} setVibe={(newVibe) => setVibe(newVibe)} />
@@ -132,13 +132,14 @@ export default function Page() {
                 {generatedBios
                   .substring(generatedBios.indexOf('1') + 3)
                   .split('2.')
+                  .split('3.')
                   .map((generatedBio) => {
                     return (
                       <div
                         className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                         onClick={() => {
                           navigator.clipboard.writeText(generatedBio);
-                          toast('Content copied to clipboard', {
+                          toast('Content copied to your clipboard', {
                             icon: '✂️',
                           });
                         }}
