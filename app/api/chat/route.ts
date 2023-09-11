@@ -1,17 +1,17 @@
 import { Configuration, OpenAIApi } from 'openai-edge';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 
-// Create an OpenAI API client (that's edge friendly!)
+// Create an OpenAI API client (that's edge-friendly!)
 const config = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(config);
 
-// Set the runtime to edge for best performance
+// Set the runtime to edge for the best performance
 export const runtime = 'edge';
 
 export async function POST(req: Request) {
-  const { vibe, bio, input } = await req.json();
+  const { vibe, bio, input } = await req.json(); // Include 'input' in the destructured object
 
   // Ask OpenAI for a streaming completion given the prompt
   const response = await openai.createChatCompletion({
@@ -20,12 +20,12 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `List 3 ${vibe} content ideas with a topic title and Instagram captions for the ${input} and clearly labeled "1.", "2." and "3.". ${
+        content: `List 14 ${vibe} tweet ideas for 2 weeks (7 each week) with a topic title and tweets based on the product ${input} and clearly labeled "1." and "2.". ${
           vibe === 'Funny'
             ? "Make sure there is a joke in there and it's a little ridiculous."
-            : null
+            : ''
         }
-          Make sure each generated content is more than 150 characters, has simple sentences that used by top creators and sellers on Instagram, and base them on this context: ${bio}${
+          Make sure each generated content is more than 150 characters, has simple sentences that are used by top creators and sellers on Twitter, and base them on this context: ${bio}${
           bio.slice(-1) === '.' ? '' : '.'
         }`,
       },
