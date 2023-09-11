@@ -130,25 +130,22 @@ export default function Page() {
               </div>
               <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
   {generatedBios
-    .substring(generatedBios.indexOf('1') + 3)
-    .split('2.')
-    .map((generatedBio, index) => {
-      return (
-        <div
-          className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-          onClick={() => {
-            navigator.clipboard.writeText(generatedBio);
-            toast('Content copied to your clipboard', {
-              icon: '✂️',
-            });
-          }}
-          key={index} // Use 'index' as the key to avoid duplicate key warning
-        >
-          <p>{generatedBio}</p>
-        </div>
-      );
-    })}
-</div>
+                  .substring(generatedBios.indexOf('1') + 3)
+                  .split('2.')
+                  .map((generatedBio) => {
+                    return (
+                      <div
+                        className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
+                        onClick={() => {
+                          navigator.clipboard.writeText(generatedBio);
+                          toast('Content copied to your clipboard', {
+                            icon: '✂️',
+                          });
+                        }}
+                        key={generatedBio}
+                      >
+                        <p>{generatedBio}</p>
+                      </div>
 
                     );
                   })}
