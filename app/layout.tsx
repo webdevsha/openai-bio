@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import '../styles/globals.css';
 
 const title = 'Content Generator';
-const description = 'Generate your next content bio in seconds.';
+const description = 'Generate your next product content in seconds.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://twitterbio.io'),
