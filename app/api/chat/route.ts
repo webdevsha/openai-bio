@@ -7,11 +7,11 @@ const config = new Configuration({
 });
 const openai = new OpenAIApi(config);
 
-// Set the runtime to edge for the best performance
+// Set the runtime to edge for best performance
 export const runtime = 'edge';
 
 export async function POST(req: Request) {
-  const { vibe, bio, input } = await req.json(); // Include 'input' in the destructured object
+  const { vibe, bio, input } = await req.json(); // Include 'input' in the destructuring
 
   // Ask OpenAI for a streaming completion given the prompt
   const response = await openai.createChatCompletion({
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
         content: `List 14 ${vibe} tweet ideas for 2 weeks (7 each week) with a topic title and tweets based on the product ${input} and clearly labeled "1." and "2.". ${
           vibe === 'Funny'
             ? "Make sure there is a joke in there and it's a little ridiculous."
-            : ''
+            : null
         }
           Make sure each generated content is more than 150 characters, has simple sentences that are used by top creators and sellers on Twitter, and base them on this context: ${bio}${
           bio.slice(-1) === '.' ? '' : '.'
